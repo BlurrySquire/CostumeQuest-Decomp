@@ -21,9 +21,9 @@ unsigned int MemoryAllocator(int param_1, unsigned int param_2, int param_3) {
 	*(int*)(uVar2 - 2) = param_1;
 	*(char*)(uVar2 - 4) = (char)param_2;
 	*(char*)allocated = (char)param_2;
-	int* puVar1 = (int*)0x28389f00;
+	int* puVar1 = (int*)pointer;
 
-	InterlockedExchangeAdd((LONG *)(0x28389f00 + param_3 * 0x18 + 4), 1);
+	InterlockedExchangeAdd((LONG *)(pointer + param_3 * 0x18 + 4), 1);
 	InterlockedExchangeAdd((LONG *)(puVar1 + param_3 * 0x18 + 8), param_2 + 4);
 	InterlockedExchangeAdd((LONG *)(puVar1 + param_3 * 0x18 + 0xc), value);
 	
