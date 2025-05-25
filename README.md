@@ -3,10 +3,8 @@ This is a decomp of the Steam release of [Costume Quest](https://store.steampowe
 
 ## Key Notes
 - The compiler used is MSVC 9.X (Visual C++ 2008) because the binary imports ``MSVCP90.DLL`` and ``MSVCR90.DLL``.
-- The Steamworks SDK used here is V1.16 from 29th July 2011, a few months before the game's release. The exact version used in the game is unknown.
-
-# Known Dependencies
-- Steamworks SDK V1.16
+- The Steamworks SDK is used in this game, but ommited from the decomp.
+- Even when this decomp is complete you still need various other games files to run the game.
 
 ## SHA256
 ```
