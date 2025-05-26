@@ -8,6 +8,7 @@ Cq.exe D9E1EE3E7E78AE80B85F51B941B4D27BEB7A205312507452CC8718AEB2BB46CF
 
 ## Key Notes
 - The compiler used is MSVC 9.X (Visual C++ 2008) because the binary imports ``MSVCP90.DLL`` and ``MSVCR90.DLL``. However, CMake with Visual Studio 2022 will be used for compiling, for ease of use.
+- The C++98 standard is assumed to be used.
 - The Steamworks SDK is used in this game, but the exact version is unknown. Version 1.16 is assumed as it is the last version that released before the game. You must provide it yourself in ``project_root/steamworks_sdk_116`` to build.
 - Even when this decomp is complete you still need various other games files to run the game.
 
