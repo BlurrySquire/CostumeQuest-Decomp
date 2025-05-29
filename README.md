@@ -1,5 +1,5 @@
 # CostumeQuest-Decomp
-This is a decomp of the Steam release of [Costume Quest](https://store.steampowered.com/app/115100/Costume_Quest/). Progress is likely to be really slow, as I know nothing about decomps.
+This is a decomp of the Steam release of [Costume Quest](https://store.steampowered.com/app/115100/Costume_Quest/). Progress is likely to be really slow, as I know nothing about decomps. Sorry about this project being such a mess at the moment, I really have no clue what I'm doing.
 
 ## SHA256
 ```
