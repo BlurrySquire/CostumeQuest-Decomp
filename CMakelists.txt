@@ -5,11 +5,9 @@ set(CMAKE_CXX_STANDARD 98)
 set(CMAKE_CXX_STANDARD_REQUIRED On)
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS")
 
-set(SOURCE_FILES
+add_executable(Cq
 	source/main.cpp
 )
-
-add_executable(Cq ${SOURCE_FILES})
 
 set(DIRECTX_SDK_DIR "C:/Program Files (x86)/Microsoft DirectX SDK (June 2010)")
 target_include_directories(Cq PUBLIC "${DIRECTX_SDK_DIR}/Include")
