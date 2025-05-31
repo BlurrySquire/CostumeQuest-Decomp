@@ -2,7 +2,6 @@
 
 #include "functions.hpp"
 
-uintptr_t VAtoRVA(uintptr_t moduleBase, uintptr_t address);
 void HookFunction(void* target, void* hook);
 
 BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved) {

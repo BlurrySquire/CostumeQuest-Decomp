@@ -2,4 +2,6 @@
 
 #include <Windows.h>
 
-extern int WINAPI hooked_WinMain(HINSTANCE, HINSTANCE, LPSTR, int);
+uintptr_t VAtoRVA(uintptr_t moduleBase, uintptr_t address);
+
+int WINAPI hooked_WinMain(HINSTANCE, HINSTANCE, LPSTR, int);
