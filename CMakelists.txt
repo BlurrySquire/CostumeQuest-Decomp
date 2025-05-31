@@ -1,32 +1,13 @@
 cmake_minimum_required(VERSION 3.15)
 
-project(Cq)
-set(CMAKE_CXX_STANDARD 03)
+project(Cq-Decomp)
+set(CMAKE_CXX_STANDARD 98)
 set(CMAKE_CXX_STANDARD_REQUIRED On)
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS")
 
-add_executable(Cq
+add_library(Cq-Decomp SHARED
 	source/main.cpp
 )
 
-set(DIRECTX_SDK_DIR "C:/Program Files (x86)/Microsoft DirectX SDK (June 2010)")
-target_include_directories(Cq PUBLIC "${DIRECTX_SDK_DIR}/Include")
-target_link_directories(Cq PUBLIC "${DIRECTX_SDK_DIR}/Lib/x86")
-
-set(STEAMWORKS_SDK_DIR "${CMAKE_SOURCE_DIR}/steamworks_sdk_116/sdk")
-target_include_directories(Cq PUBLIC "${STEAMWORKS_SDK_DIR}/public")
-target_link_directories(Cq PUBLIC "${STEAMWORKS_SDK_DIR}/redistributable_bin")
-
-target_link_libraries(Cq
-    advapi32
-    d3d9
-    dinput8
-    msacm32
-    ole32
-    oleaut32
-    shell32
-    steam_api
-    winmm
-    ws2_32
-    xinput
+set_target_properties(Cq-Decomp PROPERTIES
+    WIN32_EXECUTABLE TRUE
 )
