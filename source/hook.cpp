@@ -6,7 +6,7 @@ void HookFunction(void* target, void* hook);
 
 BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved) {
 	if (fdwReason == DLL_PROCESS_ATTACH) {
-		HookFunction((void*)VAtoRVA((uintptr_t)GetModuleHandle(nullptr), 0x402180), hooked_WinMain);
+		HookFunction((void*)VAtoRVA(((uintptr_t)0x402180)), hooked_WinMain);
 
 		MessageBoxA(NULL, "Functions have been hooked.", "CostumeQuest-Decomp", MB_OK | MB_ICONINFORMATION);
 	}
@@ -14,8 +14,8 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved) {
 	return TRUE;
 }
 
-uintptr_t VAtoRVA(uintptr_t moduleBase, uintptr_t address) {
-    return (address - 0x400000) + moduleBase;
+uintptr_t VAtoRVA(uintptr_t address) {
+    return (address - 0x400000) + (uintptr_t)GetModuleHandle(nullptr);
 }
 
 void HookFunction(void* target, void* hook) {
