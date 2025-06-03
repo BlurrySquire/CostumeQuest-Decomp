@@ -8,7 +8,7 @@ This is a decomp of the Steam release of [Costume Quest](https://store.steampowe
 
 - The Costume Quest game files are expected to be placed in ``project_root/costume_quest``. The official costume quest executable is launched and then injected with the decompiled DLL which hooks the game's functions. You also need [Ultimate-ASI-Loader's](https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases/tag/v8.2.0) ``dinput8.dll`` in the same folder.
 
-- Double Fine Productions seems to have used an engine with the prefix ``Seed``. There is quite a few classes recovered from Ghidra with that prefix. For example: ``SeedApp``, ``SeedPlayerData``, ``SeedRules``, ``SeedSession``, ``SeedSessionManager``, and ``SeedSetupData``. These classes seem to possible present some aspects of a game engine.
+- Double Fine Productions used their in-house engine Buddha for Costume Quest.
 
 ## SHA256
 ```
