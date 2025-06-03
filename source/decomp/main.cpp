@@ -13,6 +13,16 @@ uint32_t (*FUN_00401b80)() = (uint32_t (*)())VAtoRVA(0x401b80);
 uint32_t (*FUN_0070b020)(uint32_t, uint32_t) = (uint32_t (*)(uint32_t, uint32_t))VAtoRVA(0x70b020);
 void (*FUN_00719310)() = (void (*)())VAtoRVA(0x719310);
 
+uint32_t __cdecl hooked_FUN_00711c20() {
+    if ((Global::UINT_00a9e7b4 & 1) == 0) {
+        Global::UINT_00a9e7b4 = Global::UINT_00a9e7b4 | 1;
+        Global::UINT_00a9e7ac = (uint32_t)&Global::UINT_00a9e7b0;
+        return 0xa9e7b0;
+    }
+
+    return Global::UINT_00a9e7ac;
+}
+
 int WINAPI hooked_WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
     uint32_t local_8 = 0xffffffff;
 

@@ -17,4 +17,8 @@ namespace Global {
 	void (*PTR_00a8ff38)() = (void (*)())VAtoRVA(0xa8ff38);
 
 	SeedApp*& AppInstance = *(SeedApp**)VAtoRVA(0xa8f81c);
+
+	uint32_t& UINT_00a9e7b4 = *(uint32_t*)VAtoRVA(0xa9e7b4);
+	uint32_t& UINT_00a9e7ac = *(uint32_t*)VAtoRVA(0xa9e7ac);
+	uint32_t& UINT_00a9e7b0 = *(uint32_t*)VAtoRVA(0xa9e7b0);
 }

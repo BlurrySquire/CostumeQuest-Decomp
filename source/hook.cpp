@@ -8,6 +8,7 @@ void HookFunction(void* target, void* hook);
 BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved) {
 	if (fdwReason == DLL_PROCESS_ATTACH) {
 		HookFunction((void*)VAtoRVA(((uintptr_t)0x402180)), hooked_WinMain);
+        HookFunction((void*)VAtoRVA(((uintptr_t)0x711c20)), hooked_FUN_00711c20);
 
 		MessageBoxA(NULL, "Functions have been hooked.", "CostumeQuest-Decomp", MB_OK | MB_ICONINFORMATION);
 	}
