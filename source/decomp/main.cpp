@@ -7,7 +7,6 @@
 #include "globals.hpp"
 #include "seed_app.hpp"
 
-uint32_t (*FUN_00711c20)() = (uint32_t (*)())VAtoRVA(0x711c20);
 uint32_t (*MemoryAllocator)(uint32_t, int, uint32_t) = (uint32_t (*)(uint32_t, int, uint32_t))VAtoRVA(0x0711a60);
 uint32_t (*FUN_00401b80)() = (uint32_t (*)())VAtoRVA(0x401b80);
 uint32_t (*FUN_0070b020)(uint32_t, uint32_t) = (uint32_t (*)(uint32_t, uint32_t))VAtoRVA(0x70b020);
@@ -28,7 +27,7 @@ int WINAPI hooked_WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lp
 
     if (!SteamAPI_RestartAppIfNecessary(0x1c19c) && (Global::steam_init = SteamAPI_Init(), Global::steam_init)) {
         Global::steam_storage = SteamRemoteStorage();
-        FUN_00711c20();
+        hooked_FUN_00711c20();
         uint32_t iVar3 = MemoryAllocator(0x50, 0x10, 3);
         if (iVar3 == 0) {
             if (Global::PTR_00a8ff38 != nullptr) {
@@ -56,11 +55,11 @@ int WINAPI hooked_WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lp
             else {
                 Global::AppInstance = SeedApp_ctor();
             }
-            Global::AppInstance->vtable->FUN_00560220(Global::AppInstance, nCmdShow, lpCmdLine);
+            Global::AppInstance->vtable->FUN_00560220(Global::AppInstance, nCmdShow);
             FUN_00719310();
 
             if (Global::AppInstance != nullptr) {
-                Global::AppInstance->vtable->FUN_004024a0((SeedApp_vtable*)Global::AppInstance->vtable->FUN_004024a0);
+                Global::AppInstance->vtable->FUN_004024a0(Global::AppInstance, true);
             }
             Global::AppInstance = nullptr;
             local_8 = 0xffffffff;

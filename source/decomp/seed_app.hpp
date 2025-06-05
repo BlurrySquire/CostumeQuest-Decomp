@@ -7,11 +7,11 @@
 uintptr_t VAtoRVA(uintptr_t address);
 
 struct SeedApp_vtable {
-	SeedApp_vtable* (__fastcall *FUN_004024a0)(SeedApp_vtable* param_1);
-	void* field01_0x04;
-	void* field02_0x08;
-	void* field03_0x0c;
-	void* field04_0x10;
+	SeedApp_vtable* (__thiscall *FUN_004024a0)(SeedApp* instance, bool shouldDelete) = (SeedApp_vtable* (__thiscall *)(SeedApp*, bool))VAtoRVA(0x4024a0);
+	int (__fastcall *FUN_004030f0)(SeedApp* instance) = (int (__fastcall *)(SeedApp*))VAtoRVA(0x4030f0);
+	void (__fastcall *FUN_00406f60)(SeedApp* instance) = (void (__fastcall *)(SeedApp*))VAtoRVA(0x406f60);
+	void (__fastcall *FUN_00407020)(SeedApp* instance) = (void (__fastcall *)(SeedApp*))VAtoRVA(0x407020);
+	char (__fastcall *FUN_004073f0)(SeedApp* instance) = (char (__fastcall *)(SeedApp*))VAtoRVA(0x4073f0);
 	void* field05_0x14;
 	void* field06_0x18;
 	void* field07_0x1c;
@@ -20,7 +20,7 @@ struct SeedApp_vtable {
 	void* field10_0x28;
 	void* field11_0x2c;
 	void* field12_0x30;
-	void (__thiscall *FUN_00560220)(SeedApp* instance, int nCmdShow, LPSTR lpCmdLine) = (void (__thiscall *)(SeedApp*, int, LPSTR))VAtoRVA(0x560220);
+	void (__stdcall *FUN_00560220)(SeedApp* instance, int nCmdShow) = (void (__stdcall *)(SeedApp*, int))VAtoRVA(0x560220);
 	void* field14_0x38;
 	void* field15_0x38;
 	void* field16_0x40;
