@@ -7,7 +7,7 @@
 #include "globals.hpp"
 #include "seed_app.hpp"
 
-uint32_t (*MemoryAllocator)(uint32_t, int, uint32_t) = (uint32_t (*)(uint32_t, int, uint32_t))VAtoRVA(0x0711a60);
+uint32_t (*FUN_00711a60)(uint32_t, int, uint32_t) = (uint32_t (*)(uint32_t, int, uint32_t))VAtoRVA(0x0711a60);
 uint32_t (*FUN_00401b80)() = (uint32_t (*)())VAtoRVA(0x401b80);
 uint32_t (*FUN_0070b020)(uint32_t, uint32_t) = (uint32_t (*)(uint32_t, uint32_t))VAtoRVA(0x70b020);
 void (*FUN_00719310)() = (void (*)())VAtoRVA(0x719310);
@@ -28,7 +28,7 @@ int WINAPI hooked_WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lp
     if (!SteamAPI_RestartAppIfNecessary(0x1c19c) && (Global::steam_init = SteamAPI_Init(), Global::steam_init)) {
         Global::steam_storage = SteamRemoteStorage();
         hooked_FUN_00711c20();
-        uint32_t iVar3 = MemoryAllocator(0x50, 0x10, 3);
+        uint32_t iVar3 = FUN_00711a60(0x50, 0x10, 3);
         if (iVar3 == 0) {
             if (Global::PTR_00a8ff38 != nullptr) {
                 Global::PTR_00a8ff38();
