@@ -20,10 +20,10 @@ struct SeedApp_vtable {
 	char (__fastcall *FUN_004073f0)(SeedApp* instance) = (char (__fastcall *)(SeedApp*))VAtoRVA(0x4073f0);
 	void (__fastcall *thunk_FUN_00561fe0)(SeedApp* instance) = (void (__fastcall *)(SeedApp*))VAtoRVA(0x561fe0); 
 	void (__fastcall *FUN_00562090)(SeedApp* instance) = (void (__fastcall *)(SeedApp*))VAtoRVA(0x562090);
-	void (__thiscall *FUN_004ea700)(SeedApp* instance) = (void (__thiscall *)(SeedApp*))VAtoRVA(0x4ea700);
-	void (__thiscall *FUN_004ea700_a)(SeedApp* instance) = FUN_004ea700;
-	void (__thiscall *FUN_004ea700_b)(SeedApp* instance) = FUN_004ea700;
-	void (__thiscall *FUN_004ea700_c)(SeedApp* instance) = FUN_004ea700;
+	void (__thiscall *FUN_004ea700_a)(SeedApp* instance) = (void (__thiscall *)(SeedApp*))VAtoRVA(0x4ea700);
+	void (__thiscall *FUN_004ea700_b)(SeedApp* instance) = FUN_004ea700_a;
+	void (__thiscall *FUN_004ea700_c)(SeedApp* instance) = FUN_004ea700_a;
+	void (__thiscall *FUN_004ea700_d)(SeedApp* instance) = FUN_004ea700_a;
 	void (__fastcall *FUN_0071aad0)(SeedApp* instance) = (void (__fastcall *)(SeedApp*))VAtoRVA(0x71aad0);
 	uint32_t (__thiscall *FUN_00561ce0)(SeedApp* instance, uint32 param_2, uint32_t param_3, uint32_t param_4, uint32_t param_5, uint32_t param_6) = (uint32_t (__thiscall *)(SeedApp*, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t))VAtoRVA(0x561ce0);
 	void (__stdcall *FUN_00560220)(SeedApp* instance, int nCmdShow) = (void (__stdcall *)(SeedApp*, int))VAtoRVA(0x560220);
